@@ -45,7 +45,7 @@ def download_latest_filing(ticker):
     print(download_url)
     resp = requests.get(download_url, headers=headers)
     if resp.status_code == 200:
-        # Save as HTML file (for HTML filings)
+        #TODO: for some reason these are coming back as xml files sometimes - need to improve logic here.
         file_name = f"filings/{ticker}_latest.htm"
         with open(file_name, 'wb') as f:
             f.write(resp.content)
