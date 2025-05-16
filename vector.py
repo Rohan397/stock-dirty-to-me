@@ -21,9 +21,7 @@ def add_chunks_to_vector_store(chunks, file, vector_store):
     for i, chunk in enumerate(chunks):
         chunk_id = f"{file}_chunk_{i}"
 
-        chunk.metadata.update(
-            {"source": file, "chunk_number": str(i)}
-        )
+        chunk.metadata.update({"source": file, "chunk_number": str(i)})
 
         vector_store.add_documents(documents=[chunk], ids=[chunk_id])
     print(f"Completed: Added {str(i+1)} chunks from {file} to vector store")

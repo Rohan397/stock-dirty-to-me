@@ -22,10 +22,12 @@ vector_store = initialize_vectore_store()
 
 
 print("Hi! I'm EDGAR! I can help you analyze stocks and companies!")
-    
+
 while True:
     print("\n----------------------------\n")
-    next_step = input("Do you want me to:\n - analyze a new stock (type s)\n - answer a question about a stock I've already read up on (type a)\n - quit (type q)\n response: ")
+    next_step = input(
+        "Do you want me to:\n - analyze a new stock (type s)\n - answer a question about a stock I've already read up on (type a)\n - quit (type q)\n response: "
+    )
     if next_step == "q":
         break
     elif next_step == "s":
@@ -47,10 +49,5 @@ while True:
         print(result)
     else:
         print("I don't know what to do with that, let me take you back to the options.")
-    #else:
-print("Bye!")    
-
-
-
-
-   
+    # else:
+print("Bye!")
