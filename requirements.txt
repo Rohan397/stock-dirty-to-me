@@ -8,3 +8,4 @@ sec-api
 requests
 beautifulsoup4
 lxml
+PyGithub
