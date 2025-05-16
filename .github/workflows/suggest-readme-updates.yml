@@ -30,4 +30,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        python .github/scripts/suggest_readme.py 
+        python .github/scripts/readme_updates.py 
