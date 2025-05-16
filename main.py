@@ -26,11 +26,11 @@ print("Hi! I'm EDGAR! I can help you analyze stocks and companies!")
 while True:
     print("\n----------------------------\n")
     next_step = input(
-        "Do you want me to:\n - analyze a new stock (type s)\n - answer a question about a stock I've already read up on (type a)\n - quit (type q)\n response: "
+        "Do you want me to:\n - analyze a new stock (type search)\n - answer a question about a stock I've already read up on (type ask)\n - quit (type quit)\n response: "
     )
-    if next_step == "q":
+    if next_step == "quit":
         break
-    elif next_step == "s":
+    elif next_step == "search":
         ticker = input("enter the ticker for the stock you want me to analyze: ")
         if seen.get(ticker):
             print("I've already read up on this!")
@@ -41,7 +41,7 @@ while True:
                 print("No filings found for this ticker")
                 continue
             process_document(filename, vector_store)
-    elif next_step == "a":
+    elif next_step == "ask":
         question = input("Ask me your question here: ")
         retriever = get_retriever(vector_store)
         statements = retriever.invoke(question)
